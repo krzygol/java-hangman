@@ -2,7 +2,6 @@ package pl.edu.agh.hangman;
 
 public class Display {
 
-    // Grafika wisielca z kolejnymi etapami
     public static final String[] HANGMANPICS = new String[]{
             "  +---+\n" +
                     "  |   |\n" +
@@ -61,11 +60,18 @@ public class Display {
                     "========"
     };
 
-    // Wyswietlenie na podstawie ilosci bledow
     public static void showHangman(int mistakes) {
-        if (mistakes < 0 || mistakes >= HANGMANPICS.length) {
-            throw new IllegalArgumentException("Niepoprawna dlugosc");
-        }
         System.out.println(HANGMANPICS[mistakes]);
+    }
+
+    public static void showWord(String word, boolean[] founded) {
+        for (int i = 0; i < word.length(); i++) {
+            if (founded[i]) {
+                System.out.print(word.charAt(i) + " ");
+            } else {
+                System.out.print("_ ");
+            }
+        }
+        System.out.println();
     }
 }
