@@ -8,6 +8,7 @@ public class Hangman {
 
         WordRandomizer randomizer = new WordRandomizer();
         String word = randomizer.getRandomWord();
+        System.out.println("Słowo !!!TEST!!!: " + word);
 
         ValidData data = new ValidData(word);
         Scanner scanner = new Scanner(System.in);
